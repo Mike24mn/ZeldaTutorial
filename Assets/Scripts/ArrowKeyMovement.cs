@@ -6,10 +6,8 @@ public class ArrowKeyMovement : MonoBehaviour
 
     public Sprite downSprite1;
     public Sprite downSprite2;
-
     public Sprite rightSprite1;
     public Sprite rightSprite2;
-
     public Sprite upSprite1;
     public Sprite upSprite2;
 
@@ -19,8 +17,8 @@ public class ArrowKeyMovement : MonoBehaviour
     private float animationTimer = 0f;
     private bool useSecondSprite = false;
 
-    // Remember the last direction Link was facing
     private Vector2 lastDirection = Vector2.down;
+    private Vector3 movement;
 
     void Start()
     {
@@ -33,42 +31,74 @@ public class ArrowKeyMovement : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
-        if (Mathf.Abs(horizontal) > Mathf.Abs(vertical))
+        movement = Vector3.zero;
+
+        if (horizontal != 0)
         {
-            vertical = 0;
+            float targetY = Mathf.Round(transform.position.y * 2f) / 2f;
+            float difference = targetY - transform.position.y;
+
+            if (Mathf.Abs(difference) > 0.05f)
+            {
+                movement.y = Mathf.Sign(difference);
+            }
+            else
+            {
+                Vector3 p = transform.position;
+                p.y = targetY;
+                transform.position = p;
+                movement.x = horizontal;
+            }
+
+            lastDirection = horizontal > 0 ? Vector2.right : Vector2.left;
         }
-        else
+        else if (vertical != 0)
         {
-            horizontal = 0;
+            float targetX = Mathf.Round(transform.position.x * 2f) / 2f;
+            float difference = targetX - transform.position.x;
+
+            if (Mathf.Abs(difference) > 0.05f)
+            {
+                movement.x = Mathf.Sign(difference);
+            }
+            else
+            {
+                Vector3 p = transform.position;
+                p.x = targetX;
+                transform.position = p;
+                movement.y = vertical;
+            }
+
+            lastDirection = vertical > 0 ? Vector2.up : Vector2.down;
         }
 
-        rb.linearVelocity = new Vector3(
-            horizontal * movementSpeed,
-            vertical * movementSpeed,
-            0
-        );
+        UpdateAnimation();
+    }
 
-        if (vertical < 0)
+    void FixedUpdate()
+    {
+        rb.linearVelocity = movement * movementSpeed;
+    }
+
+    void UpdateAnimation()
+    {
+        if (movement.y < 0)
         {
-            lastDirection = Vector2.down;
             spriteRenderer.flipX = false;
             Animate(downSprite1, downSprite2);
         }
-        else if (vertical > 0)
+        else if (movement.y > 0)
         {
-            lastDirection = Vector2.up;
             spriteRenderer.flipX = false;
             Animate(upSprite1, upSprite2);
         }
-        else if (horizontal > 0)
+        else if (movement.x > 0)
         {
-            lastDirection = Vector2.right;
             spriteRenderer.flipX = false;
             Animate(rightSprite1, rightSprite2);
         }
-        else if (horizontal < 0)
+        else if (movement.x < 0)
         {
-            lastDirection = Vector2.left;
             spriteRenderer.flipX = true;
             Animate(rightSprite1, rightSprite2);
         }
@@ -111,7 +141,7 @@ public class ArrowKeyMovement : MonoBehaviour
             spriteRenderer.flipX = false;
             spriteRenderer.sprite = rightSprite1;
         }
-        else if (lastDirection == Vector2.left)
+        else
         {
             spriteRenderer.flipX = true;
             spriteRenderer.sprite = rightSprite1;

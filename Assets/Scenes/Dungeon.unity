@@ -53954,6 +53954,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4931935}
     m_Modifications:
+    - target: {fileID: -692059249731252883, guid: 966f2356a6c72417fa20ee345e5e8bd8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 547138644706406766, guid: 966f2356a6c72417fa20ee345e5e8bd8, type: 3}
       propertyPath: m_Name
       value: Tile_WALL
@@ -177182,8 +177186,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.9375, y: 1, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.55, y: 0.55, z: 0.2}
+  m_Center: {x: 0, y: -0.15, z: 0}
 --- !u!114 &1757299385
 MonoBehaviour:
   m_ObjectHideFlags: 0
