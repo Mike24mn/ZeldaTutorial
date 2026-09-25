@@ -4,21 +4,27 @@ public class CameraFollow : MonoBehaviour
 {
     public Transform target;
 
-    private Vector3 offset;
+    public float roomWidth = 16f;
+    public float roomHeight = 11f;
 
-    void Start()
-    {
-        if (target != null)
-        {
-            offset = transform.position - target.position;
-        }
-    }
+    public float cameraOffsetX = 7.5f;
+    public float cameraOffsetY = 5f;
 
     void LateUpdate()
     {
-        if (target != null)
-        {
-            transform.position = target.position + offset;
-        }
+        if (target == null)
+            return;
+
+        int roomX = Mathf.FloorToInt(target.position.x / roomWidth);
+        int roomY = Mathf.FloorToInt(target.position.y / roomHeight);
+
+        float cameraX = roomX * roomWidth + cameraOffsetX;
+        float cameraY = roomY * roomHeight + cameraOffsetY;
+
+        transform.position = new Vector3(
+            cameraX,
+            cameraY,
+            transform.position.z
+        );
     }
 }

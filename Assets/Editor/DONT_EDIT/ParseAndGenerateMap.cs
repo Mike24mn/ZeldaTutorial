@@ -246,8 +246,10 @@ public class ParseAndGenerateMap : EditorWindow
 
         // Load Sprites
         var spriteSheetPath = AssetDatabase.GetAssetPath(spriteSheet);
-        Sprite[] spriteArray = AssetDatabase.LoadAllAssetsAtPath(spriteSheetPath).OfType<Sprite>().ToArray();        
-
+        Sprite[] spriteArray = AssetDatabase.LoadAllAssetsAtPath(spriteSheetPath)
+            .OfType<Sprite>()
+            .OrderBy(sprite => sprite.name)
+            .ToArray();
         // Read in the map data
         int height = mapAsTileIndices.GetLength(1);
         int width = mapAsTileIndices.GetLength(0);
@@ -272,7 +274,7 @@ public class ParseAndGenerateMap : EditorWindow
         {
             hallsMatrix = metroidRooms.text.Split(new char[] { '\n' }, System.StringSplitOptions.RemoveEmptyEntries);
         }
-        
+
         // Now generate all of the rooms
         for (int y = 0; y < numRoomsY; y++)
         {
