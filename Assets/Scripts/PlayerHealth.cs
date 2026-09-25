@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -19,10 +20,13 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth -= damage;
 
-        if (currentHealth < 0)
+        if (currentHealth <= 0)
         {
             currentHealth = 0;
+            Die();
         }
+
+        Debug.Log("Health: " + currentHealth);
     }
 
     public void Heal(int amount)
@@ -34,4 +38,18 @@ public class PlayerHealth : MonoBehaviour
             currentHealth = maxHealth;
         }
     }
+
+    void Die()
+    {
+        Debug.Log("LINK DIED");
+
+        SceneManager.LoadScene(
+            SceneManager.GetActiveScene().buildIndex
+        );
+    }
+
+    public void MaxHealth()
+{
+    currentHealth = maxHealth;
+}
 }

@@ -20,6 +20,8 @@ public class ArrowKeyMovement : MonoBehaviour
     private Vector2 lastDirection = Vector2.down;
     private Vector3 movement;
 
+    public bool controlsEnabled = true;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -28,6 +30,12 @@ public class ArrowKeyMovement : MonoBehaviour
 
     void Update()
     {
+        if (!controlsEnabled)
+        {
+            movement = Vector3.zero;
+            return;
+        }
+
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
@@ -77,7 +85,10 @@ public class ArrowKeyMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.linearVelocity = movement * movementSpeed;
+        if (controlsEnabled)
+        {
+            rb.linearVelocity = movement * movementSpeed;
+        }
     }
 
     void UpdateAnimation()
@@ -146,5 +157,10 @@ public class ArrowKeyMovement : MonoBehaviour
             spriteRenderer.flipX = true;
             spriteRenderer.sprite = rightSprite1;
         }
+    }
+
+    public Vector2 GetFacingDirection()
+    {
+        return lastDirection;
     }
 }
