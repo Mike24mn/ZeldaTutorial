@@ -57,13 +57,25 @@ Recreation of Dungeon #1 from the original 1986 *The Legend of Zelda* in Unity.
 
 - Rupee pickups are implemented.
 - Collecting rupees increases the player's rupee count.
-- Current rupee count is displayed in the HUD.
+- Current rupee count is displayed in the HUD with a rupee icon.
+- Rupee pickups provide audio feedback.
 - Rupees are consumed when firing arrows.
+
+#### Keys and Locked Doors
+
+- Key pickups are implemented.
+- Collecting a key increases the player's key count.
+- Current key count is displayed in the HUD with a key icon.
+- Key pickups provide audio feedback.
+- Locked doors prevent Link from passing without a key.
+- Entering a locked door with a key consumes one key.
+- The door unlocks after consuming a key and allows Link to continue into the connected room.
 
 #### Weapon UI
 
 - HUD displays weapon information.
 - Sword and bow indicators are implemented.
+- HUD displays health, rupee count, and key count.
 
 #### Stalfos
 
@@ -86,6 +98,7 @@ Recreation of Dungeon #1 from the original 1986 *The Legend of Zelda* in Unity.
 - Link has directional sprites.
 - Link uses different sprites to indicate movement.
 - Combat and damage provide visual feedback.
+- Collectible pickups provide visual and audio feedback.
 
 ## Controls
 
@@ -100,14 +113,15 @@ Recreation of Dungeon #1 from the original 1986 *The Legend of Zelda* in Unity.
 
 Remaining milestone work includes:
 
-- Locked doors and keys
 - Remaining dungeon mechanic integration
 - Final testing and cleanup
 - Project management / submission requirements
 
 ## Current Build Status
 
-The project currently includes a playable recreation of the Zelda dungeon with grid-based Link movement, directional sprites, wall collision, room-to-room progression, health and damage, knockback, heart pickups, rupee collection, sword combat, full-health sword beams, bow and arrow combat, weapon HUD elements, cheat functionality, and a functional Stalfos enemy.
+The project currently includes a playable recreation of the Zelda dungeon with grid-based Link movement, directional sprites, wall collision, room-to-room progression, health and damage, knockback, heart pickups, rupee and key collection, inventory HUD elements, locked doors, sword combat, full-health sword beams, bow and arrow combat, weapon HUD elements, cheat functionality, and a functional Stalfos enemy.
+
+Keys can be collected and tracked through the HUD, and locked doors consume keys when unlocked. Rupees are also tracked through the HUD and are consumed when firing arrows. Collectible pickups provide audio feedback.
 
 A dedicated `LAB_Stalfos` scene is included for isolated enemy testing. The generated Zelda dungeon map is functioning correctly after updating the tile-generation code for the current Unity version.
 
