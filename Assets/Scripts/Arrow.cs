@@ -46,7 +46,13 @@ public class Arrow : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            Destroy(other.gameObject);
+            Stalfos stalfos = other.GetComponent<Stalfos>();
+
+            if (stalfos != null)
+            {
+                stalfos.TakeDamage(1, transform.position);
+            }
+
             Destroy(gameObject);
         }
     }
