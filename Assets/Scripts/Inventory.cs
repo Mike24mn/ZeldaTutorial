@@ -51,4 +51,9 @@ public class Inventory : MonoBehaviour
     {
         return keys;
     }
+
+    public void MaxKeys()
+    {
+        keys = 999;
+    }
 }

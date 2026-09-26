@@ -19,7 +19,8 @@ public class CheatCode : MonoBehaviour
         {
             health.MaxHealth();
             inventory.MaxRupees();
-            damage.cheatInvincible = true;
+            inventory.MaxKeys();
+            damage.cheatInvincible = !damage.cheatInvincible;
 
             Debug.Log("CHEAT ACTIVATED");
         }
