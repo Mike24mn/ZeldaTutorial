@@ -22,6 +22,15 @@ Recreation of Dungeon #1 from the original 1986 *The Legend of Zelda* in Unity.
 - Camera displays a complete Zelda room using the required 4:3 presentation.
 - Camera transitions between rooms as Link moves through dungeon doorways.
 
+#### Resolution and Control Standards
+
+- Game build uses the required windowed 1024 × 960 resolution.
+- Runtime resolution is configured using `Screen.SetResolution()`.
+- Dungeon is configured as the startup scene for the game build.
+- Arrow Keys and WASD control Link's movement.
+- X controls the standard weapon (sword).
+- Z controls the alternate weapon (bow).
+
 #### Sword
 
 - Sword attacks in the direction Link is facing.
@@ -102,18 +111,18 @@ Recreation of Dungeon #1 from the original 1986 *The Legend of Zelda* in Unity.
 
 ## Controls
 
-| Input | Action |
-| --- | --- |
-| Arrow Keys / WASD | Move |
-| X | Sword |
-| Z | Bow / Fire Arrow |
-| 1 | Toggle cheat / god mode |
+| **InputAction**   |                         |
+| ----------------- | ----------------------- |
+| Arrow Keys / WASD | Move                    |
+| X                 | Sword                   |
+| Z                 | Bow / Fire Arrow        |
+| 1                 | Toggle cheat / god mode |
 
 ## P1 Milestone Tasks Still In Progress
 
 Remaining milestone work includes:
 
-- Remaining dungeon mechanic integration
+- Collectable power-up / enemy drop integration
 - Final testing and cleanup
 - Project management / submission requirements
 
@@ -122,6 +131,8 @@ Remaining milestone work includes:
 The project currently includes a playable recreation of the Zelda dungeon with grid-based Link movement, directional sprites, wall collision, room-to-room progression, health and damage, knockback, heart pickups, rupee and key collection, inventory HUD elements, locked doors, sword combat, full-health sword beams, bow and arrow combat, weapon HUD elements, cheat functionality, and a functional Stalfos enemy.
 
 Keys can be collected and tracked through the HUD, and locked doors consume keys when unlocked. Rupees are also tracked through the HUD and are consumed when firing arrows. Collectible pickups provide audio feedback.
+
+The game is configured to launch directly into the Dungeon scene using the required windowed 1024 × 960 resolution. The required milestone control scheme is implemented for movement, the standard weapon, and the alternate weapon.
 
 A dedicated `LAB_Stalfos` scene is included for isolated enemy testing. The generated Zelda dungeon map is functioning correctly after updating the tile-generation code for the current Unity version.
 
