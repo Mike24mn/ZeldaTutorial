@@ -3,6 +3,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     private int rupees = 0;
+    private int keys = 0;
 
     public void AddRupee()
     {
@@ -24,7 +25,30 @@ public class Inventory : MonoBehaviour
     }
 
     public void MaxRupees()
-{
-    rupees = 999;
-}
+    {
+        rupees = 999;
+    }
+
+    // ===== Keys =====
+
+    public void AddKey()
+    {
+        keys++;
+        Debug.Log("Key collected. Keys: " + keys);
+    }
+
+    public bool SpendKey()
+    {
+        if (keys <= 0)
+            return false;
+
+        keys--;
+        Debug.Log("Key used. Keys: " + keys);
+        return true;
+    }
+
+    public int GetKeys()
+    {
+        return keys;
+    }
 }
