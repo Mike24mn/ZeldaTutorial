@@ -6,20 +6,25 @@ public class WeaponUI : MonoBehaviour
     public Image swordIcon;
     public Image bowIcon;
 
-    void Start()
-    {
-        UpdateUI();
-    }
+    public Sprite bowSprite;
+    public Sprite boomerangSprite;
+    public Sprite bombSprite;
+
+    private int selectedWeapon = 0;
 
     void Update()
     {
-        UpdateUI();
-    }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            selectedWeapon = (selectedWeapon + 1) % 3;
 
-    void UpdateUI()
-    {
-        // X = sword, Z = bow in our current controls.
-        // Keep both visible; highlight them when their key is being used.
+            if (selectedWeapon == 0)
+                bowIcon.sprite = bowSprite;
+            else if (selectedWeapon == 1)
+                bowIcon.sprite = boomerangSprite;
+            else
+                bowIcon.sprite = bombSprite;
+        }
 
         swordIcon.color = Input.GetKey(KeyCode.X)
             ? Color.white
