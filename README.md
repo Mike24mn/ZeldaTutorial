@@ -215,3 +215,13 @@ The game is configured to launch directly into the Dungeon scene using the requi
 A dedicated `LAB_Stalfos` scene is included for isolated enemy testing. The generated Zelda dungeon map is functioning correctly after updating the tile-generation code for the current Unity version.
 
 Development has progressed from the P1 Milestone into the P1 Alpha requirements. Current Alpha work is focused on implementing the remaining dungeon enemies, environmental mechanics, authentic dungeon progression, and additional audio.
+
+### Keese
+- Implemented Keese bat enemy behavior.
+- Keese fly in randomized directions and change direction on collisions.
+- Keese damage the player on contact.
+- Keese have enemy health and support the existing combat/damage system.
+- Sword, arrows, boomerang, and bombs can damage/defeat Keese.
+- Created a reusable `Keese` prefab.
+- Created `LAB_Keese` scene for isolated testing.
+- Integrated Keese into the main Dungeon scene.
