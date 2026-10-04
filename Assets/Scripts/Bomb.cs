@@ -48,6 +48,17 @@ public class Bomb : MonoBehaviour
                     transform.position
                 );
             }
+
+            // Damage Goriya
+            Goriya goriya = hit.GetComponent<Goriya>();
+
+            if (goriya != null)
+            {
+                goriya.TakeDamage(
+                    damage,
+                    transform.position
+                );
+            }
         }
 
         // Keep explosion visible briefly

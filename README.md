@@ -225,3 +225,14 @@ Development has progressed from the P1 Milestone into the P1 Alpha requirements.
 - Created a reusable `Keese` prefab.
 - Created `LAB_Keese` scene for isolated testing.
 - Integrated Keese into the main Dungeon scene.
+
+### Goriya
+- Implemented Goriya enemy behavior with cardinal-direction movement.
+- Added directional sprites that update based on movement direction.
+- Goriya periodically throws boomerangs in the direction it is facing.
+- Enemy boomerangs travel outward, return to Goriya, and damage the player.
+- Goriya supports health, damage, and knockback.
+- Sword, arrows, boomerang, and bombs can damage/defeat Goriya.
+- Created reusable `Goriya` and `GoriyaBoomerang` prefabs.
+- Created `LAB_Goriya` scene for isolated testing.
+- Integrated Goriya into the main Dungeon scene.

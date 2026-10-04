@@ -62,6 +62,10 @@ public class Boomerang : MonoBehaviour
         if (keese != null)
             keese.TakeDamage(damage, transform.position);
 
+        Goriya goriya = other.GetComponent<Goriya>();
+        if (goriya != null)
+            goriya.TakeDamage(damage, transform.position);
+
         returning = true;
     }
 }

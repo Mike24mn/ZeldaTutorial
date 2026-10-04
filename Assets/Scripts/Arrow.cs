@@ -55,6 +55,10 @@ public class Arrow : MonoBehaviour
         if (keese != null)
             keese.TakeDamage(1, transform.position);
 
+        Goriya goriya = other.GetComponent<Goriya>();
+        if (goriya != null)
+            goriya.TakeDamage(1, transform.position);
+
         Destroy(gameObject);
     }
 }
