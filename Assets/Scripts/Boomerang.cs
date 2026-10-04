@@ -51,17 +51,17 @@ public class Boomerang : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy"))
-        {
-            Stalfos stalfos = other.GetComponent<Stalfos>();
+        if (!other.CompareTag("Enemy"))
+            return;
 
-            if (stalfos != null)
-            {
-                stalfos.TakeDamage(damage, transform.position);
-            }
+        Stalfos stalfos = other.GetComponent<Stalfos>();
+        if (stalfos != null)
+            stalfos.TakeDamage(damage, transform.position);
 
-            // Start returning after hitting an enemy
-            returning = true;
-        }
+        Keese keese = other.GetComponent<Keese>();
+        if (keese != null)
+            keese.TakeDamage(damage, transform.position);
+
+        returning = true;
     }
 }
