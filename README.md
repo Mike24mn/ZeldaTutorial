@@ -187,7 +187,7 @@ Recreation of Dungeon #1 from the original 1986 *The Legend of Zelda* in Unity.
 - Alternate-weapon HUD updates
 - Functional player directional/movement aesthetics
 - Existing player and Stalfos health/knockback systems
-- Background music and collectible audio are implemented
+- Player and enemy sound effects, background music, and collectible audio are implemented
 - Keese enemy
 - Goriya enemy and returning enemy boomerang
 - Gel enemy
@@ -198,12 +198,14 @@ Recreation of Dungeon #1 from the original 1986 *The Legend of Zelda* in Unity.
 - Pushable blocks and staircase teleports
 - Bow Room
 - Old Man NPC sprite and proximity-triggered dialogue in the Dungeon scene
+- Enemy and item placement based on the original Dungeon #1 layout (substantially completed)
+- Dungeon room connections and level progression implemented
 
 ### Still In Progress
 
-- Verify authentic enemy and item placement / level progression against Dungeon #1 reference
-- Additional player and enemy sound effects
-- Full room-by-room regression testing (doors, water, keys, staircase, Bow Room, Old Man dialogue, and boss) and cleanup
+- Final verification of enemy and item placement against the Dungeon #1 reference
+- Full room-by-room gameplay testing and bug fixes (doors, water, keys, staircase, Bow Room, Old Man dialogue, and boss)
+- Final build and submission preparation
 
 ## Current Build Status
 
@@ -221,7 +223,7 @@ The game is configured to launch directly into the Dungeon scene using the requi
 
 A dedicated `LAB_Stalfos` scene is included for isolated enemy testing. The generated Zelda dungeon map is functioning correctly after updating the tile-generation code for the current Unity version.
 
-Development has progressed from the P1 Milestone into the P1 Alpha requirements. All currently planned Alpha enemy types are implemented. The Bow Room, Old Man dialogue, pushable blocks, staircase teleports, and solid water tiles have also been added. Doorway collision and water-tile collision have received additional fixes. Remaining Alpha work focuses on authentic enemy and item placement, additional audio, integration testing, and cleanup.
+Development has progressed from the P1 Milestone into the P1 Alpha requirements. All currently planned Alpha enemy types are implemented. The Bow Room, Old Man dialogue, pushable blocks, staircase teleports, and solid water tiles have also been added. Doorway collision and water-tile collision have received additional fixes. Enemy and item placement and dungeon level progression are substantially completed. Remaining Alpha work focuses on final placement verification, full gameplay regression testing, bug fixes, and submission preparation.
 
 ### Keese
 - Implemented Keese bat enemy behavior.
