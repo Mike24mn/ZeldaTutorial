@@ -186,10 +186,10 @@ Recreation of Dungeon #1 from the original 1986 *The Legend of Zelda* in Unity.
 - Gel enemy
 - BladeTrap enemy
 - Wallmaster enemy
+- Aquamentus boss with three-projectile fireball attacks, health, and weapon damage support
 
 ### Still In Progress
 
-- Aquamentus
 - Water tiles
 - Pushable blocks
 - 2D Bow Room
@@ -204,7 +204,7 @@ The project currently includes a playable recreation of the Zelda dungeon with g
 
 The alternate-weapon system currently supports the Bow, Boomerang, and Bomb. Space cycles between available alternate weapons, the HUD updates to show the selected weapon, and Z activates the selected weapon. The Bow fires arrows using rupees, the Boomerang travels outward and returns to Link, and Bombs explode after a timed fuse and damage nearby enemies.
 
-Stalfos, Keese, Goriya, Gel, BladeTrap, and Wallmaster are implemented in the Dungeon scene. Standard enemies support weapon damage; BladeTrap charges at Link, while Wallmaster grabs Link and returns him to the dungeon entrance. Stalfos and Gel can randomly drop collectibles when defeated.
+Stalfos, Keese, Goriya, Gel, BladeTrap, Wallmaster, and Aquamentus are implemented in the Dungeon scene. Standard enemies support weapon damage; BladeTrap charges at Link, while Wallmaster grabs Link and returns him to the dungeon entrance. Aquamentus moves vertically and fires three spread projectiles toward Link when he is nearby. Aquamentus can be defeated using the sword, sword beam, arrows, boomerang, or bombs. Stalfos and Gel can randomly drop collectibles when defeated.
 
 Keys can be collected and tracked through the HUD, and locked doors consume keys when unlocked. Rupees are tracked through the HUD and are consumed when firing arrows. Collectible pickups provide audio feedback.
 
@@ -214,7 +214,7 @@ The game is configured to launch directly into the Dungeon scene using the requi
 
 A dedicated `LAB_Stalfos` scene is included for isolated enemy testing. The generated Zelda dungeon map is functioning correctly after updating the tile-generation code for the current Unity version.
 
-Development has progressed from the P1 Milestone into the P1 Alpha requirements. Current Alpha work is focused on the remaining dungeon enemy (Aquamentus), environmental mechanics, authentic dungeon progression, and additional audio.
+Development has progressed from the P1 Milestone into the P1 Alpha requirements. All currently planned Alpha enemy types are implemented. Remaining Alpha work focuses on environmental mechanics, authentic dungeon progression, additional audio, and final testing.
 
 ### Keese
 - Implemented Keese bat enemy behavior.
@@ -260,3 +260,13 @@ Development has progressed from the P1 Milestone into the P1 Alpha requirements.
 - Grabbing Link returns him to the dungeon entrance, with camera transitions tested.
 - Added respawn cooldown, transparent sprite, and reusable prefab.
 - Integrated and tested Wallmaster in the Dungeon scene.
+
+### Aquamentus
+- Implemented Aquamentus boss with vertical movement within a limited range.
+- Aquamentus detects Link within a nearby area and periodically fires three fireballs in a spread pattern.
+- Fireballs damage Link through the existing player damage system and expire automatically.
+- Added a six-hit-point health system with brief invulnerability between hits.
+- Sword, sword beam, arrows, and boomerang deal one damage; bombs deal two damage.
+- Aquamentus is destroyed when its health reaches zero.
+- Created reusable `Aquamentus` and `AquamentusFireball` prefabs and integrated the boss into the Dungeon scene.
+- Updated player weapon collision and explosion scripts to support Aquamentus damage.
