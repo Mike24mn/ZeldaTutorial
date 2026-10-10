@@ -19,11 +19,15 @@ Recreation of Dungeon #1 from the original 1986 *The Legend of Zelda* in Unity.
 - Fixed tile-generation compatibility issue that caused generated dungeon sprites to appear incorrectly.
 - Wall collision is implemented using generated wall tile prefabs.
 - Doorway collision has been adjusted to allow Link to move between connected rooms.
+- Fixed obstructed door openings that previously blocked Link from entering adjacent rooms.
 - Camera displays a complete Zelda room using the required 4:3 presentation.
 - Camera transitions between rooms as Link moves through dungeon doorways.
 - Solid water tiles and a reusable water prefab have been added.
+- Corrected collision on 70 water tiles in the Dungeon scene using `FixWaterTiles.cs`.
 - Pushable blocks, staircase teleports, and the Bow Room have been implemented.
-- The Old-Man Room has been implemented with dialogue and a sprite.
+- An Old Man NPC sprite and proximity-triggered dialogue have been configured in the Dungeon scene.
+- Dialogue uses `OldManDialogue.cs` to show text when Link approaches and hide it when he moves away.
+- Old Man dialogue text was adjusted for the 256 × 240 Canvas reference resolution and 4:3 presentation.
 
 #### Resolution and Control Standards
 
@@ -193,13 +197,13 @@ Recreation of Dungeon #1 from the original 1986 *The Legend of Zelda* in Unity.
 - Solid water tiles and reusable water prefab
 - Pushable blocks and staircase teleports
 - Bow Room
-- Old-Man Room with dialogue and sprite
+- Old Man NPC sprite and proximity-triggered dialogue in the Dungeon scene
 
 ### Still In Progress
 
-- Authentic enemy and item placement / level progression
+- Verify authentic enemy and item placement / level progression against Dungeon #1 reference
 - Additional player and enemy sound effects
-- Final Alpha testing and cleanup
+- Full room-by-room regression testing (doors, water, keys, staircase, Bow Room, Old Man dialogue, and boss) and cleanup
 
 ## Current Build Status
 
@@ -217,7 +221,7 @@ The game is configured to launch directly into the Dungeon scene using the requi
 
 A dedicated `LAB_Stalfos` scene is included for isolated enemy testing. The generated Zelda dungeon map is functioning correctly after updating the tile-generation code for the current Unity version.
 
-Development has progressed from the P1 Milestone into the P1 Alpha requirements. All currently planned Alpha enemy types are implemented. The Bow Room, Old-Man Room, pushable blocks, staircase teleports, and solid water tiles have also been added. Remaining Alpha work focuses on authentic enemy and item placement, additional audio, integration testing, and cleanup.
+Development has progressed from the P1 Milestone into the P1 Alpha requirements. All currently planned Alpha enemy types are implemented. The Bow Room, Old Man dialogue, pushable blocks, staircase teleports, and solid water tiles have also been added. Doorway collision and water-tile collision have received additional fixes. Remaining Alpha work focuses on authentic enemy and item placement, additional audio, integration testing, and cleanup.
 
 ### Keese
 - Implemented Keese bat enemy behavior.
@@ -280,10 +284,17 @@ Development has progressed from the P1 Milestone into the P1 Alpha requirements.
 - Implemented pushable blocks.
 
 ### Old-Man Room
-- Added the Old-Man Room with dialogue and a character sprite.
+- Added an Old Man NPC using the `ZeldaSpriteOldMan_0` sprite.
+- Attached `OldManDialogue.cs`, linked Link and the dialogue text, and tested proximity-based dialogue visibility.
+- Dialogue reads: "IT'S DANGEROUS / TO GO ALONE! / TAKE THIS."
+- Adjusted the TextMeshPro alignment and layout to fit the Canvas reference resolution of 256 × 240.
+- Final NPC room placement and any sword pickup behavior still need verification.
 
 ### Water Tiles
 - Added solid water tiles and a reusable water prefab.
+- Used `FixWaterTiles.cs` to correct water collision on 70 Dungeon tiles.
+- Adjusted obstructed door openings so Link can move between connected rooms.
 
 ### Integration Notes
-- The above environment features are recorded from the latest teammate commits; full in-game regression testing is still pending.
+- The environment features include teammate contributions and subsequent local fixes. Full room-by-room regression testing is still pending.
+- The latest scene changes include enemy/item placement work and Old Man dialogue configuration; exact placement against the original Dungeon #1 map still needs verification.
