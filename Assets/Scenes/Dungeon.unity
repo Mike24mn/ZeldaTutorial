@@ -192875,6 +192875,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 966f2356a6c72417fa20ee345e5e8bd8, type: 3}
+--- !u!1 &1894710740
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1894710741}
+  m_Layer: 0
+  m_Name: DungeonEntrance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1894710741
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894710740}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 39.51, y: 8.46, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1894868812 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7007698557765910282, guid: 966f2356a6c72417fa20ee345e5e8bd8, type: 3}
@@ -216196,6 +216227,67 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daf9698ed4b188d43b652b0f02d41c70, type: 3}
+--- !u!1001 &6546986008804281016
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3236404417711096888, guid: 4c0e0c922d4ef004daef13ec38058db4, type: 3}
+      propertyPath: m_Name
+      value: Wallmaster
+      objectReference: {fileID: 0}
+    - target: {fileID: 3853287333380051703, guid: 4c0e0c922d4ef004daef13ec38058db4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 32.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 3853287333380051703, guid: 4c0e0c922d4ef004daef13ec38058db4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 15.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 3853287333380051703, guid: 4c0e0c922d4ef004daef13ec38058db4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3853287333380051703, guid: 4c0e0c922d4ef004daef13ec38058db4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3853287333380051703, guid: 4c0e0c922d4ef004daef13ec38058db4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3853287333380051703, guid: 4c0e0c922d4ef004daef13ec38058db4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3853287333380051703, guid: 4c0e0c922d4ef004daef13ec38058db4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3853287333380051703, guid: 4c0e0c922d4ef004daef13ec38058db4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3853287333380051703, guid: 4c0e0c922d4ef004daef13ec38058db4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3853287333380051703, guid: 4c0e0c922d4ef004daef13ec38058db4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6815944133555155610, guid: 4c0e0c922d4ef004daef13ec38058db4, type: 3}
+      propertyPath: dungeonEntrance
+      value: 
+      objectReference: {fileID: 1894710741}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4c0e0c922d4ef004daef13ec38058db4, type: 3}
 --- !u!1001 &7879479715133056397
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -216280,3 +216372,5 @@ SceneRoots:
   - {fileID: 5367072738972901662}
   - {fileID: 1673162638627992802}
   - {fileID: 5992493427125219864}
+  - {fileID: 6546986008804281016}
+  - {fileID: 1894710741}
