@@ -181,13 +181,13 @@ Recreation of Dungeon #1 from the original 1986 *The Legend of Zelda* in Unity.
 - Functional player directional/movement aesthetics
 - Existing player and Stalfos health/knockback systems
 - Background music and collectible audio are implemented
+- Keese enemy
+- Goriya enemy and returning enemy boomerang
+- Gel enemy
 
 ### Still In Progress
 
-- Keese
-- Goriya
 - BladeTrap
-- Gel
 - Wallmaster
 - Aquamentus
 - Water tiles
@@ -204,7 +204,7 @@ The project currently includes a playable recreation of the Zelda dungeon with g
 
 The alternate-weapon system currently supports the Bow, Boomerang, and Bomb. Space cycles between available alternate weapons, the HUD updates to show the selected weapon, and Z activates the selected weapon. The Bow fires arrows using rupees, the Boomerang travels outward and returns to Link, and Bombs explode after a timed fuse and damage nearby enemies.
 
-Stalfos uses a health and knockback system rather than being immediately destroyed by attacks. Player weapons interact with this system, and defeated Stalfos can randomly drop a heart, a rupee, or no collectible.
+Stalfos, Keese, Goriya, and Gel are implemented and integrated into the Dungeon scene. Player weapons can damage these enemies. Stalfos and Gel can randomly drop collectibles when defeated.
 
 Keys can be collected and tracked through the HUD, and locked doors consume keys when unlocked. Rupees are tracked through the HUD and are consumed when firing arrows. Collectible pickups provide audio feedback.
 
@@ -214,7 +214,7 @@ The game is configured to launch directly into the Dungeon scene using the requi
 
 A dedicated `LAB_Stalfos` scene is included for isolated enemy testing. The generated Zelda dungeon map is functioning correctly after updating the tile-generation code for the current Unity version.
 
-Development has progressed from the P1 Milestone into the P1 Alpha requirements. Current Alpha work is focused on implementing the remaining dungeon enemies, environmental mechanics, authentic dungeon progression, and additional audio.
+Development has progressed from the P1 Milestone into the P1 Alpha requirements. Current Alpha work is focused on the remaining dungeon enemies (BladeTrap, Wallmaster, and Aquamentus), environmental mechanics, authentic dungeon progression, and additional audio.
 
 ### Keese
 - Implemented Keese bat enemy behavior.
@@ -236,3 +236,12 @@ Development has progressed from the P1 Milestone into the P1 Alpha requirements.
 - Created reusable `Goriya` and `GoriyaBoomerang` prefabs.
 - Created `LAB_Goriya` scene for isolated testing.
 - Integrated Goriya into the main Dungeon scene.
+
+### Gel
+- Implemented Gel enemy with randomized four-direction movement and pauses between movements.
+- Gel collides with walls and obstacles and damages Link on contact.
+- Gel has one hit point and can be defeated with the sword, arrows, boomerang, or bombs.
+- Defeated Gel randomly drops a rupee, a heart, or no item.
+- Configured Gel sprite sheet transparency and sprite import settings.
+- Created a reusable `Gel` prefab and integrated it into the main Dungeon scene.
+- Gel's two-frame visual animation is deferred; core Alpha gameplay behavior is implemented.
