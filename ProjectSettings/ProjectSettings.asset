@@ -626,6 +626,7 @@ PlayerSettings:
   webProgressiveAssetLoading: 0
   scriptingDefineSymbols:
     Standalone: SENTIS_ANALYTICS_ENABLED;APP_UI_EDITOR_ONLY;EECS494HELPER
+    WebGL: APP_UI_EDITOR_ONLY;EECS494HELPER;SENTIS_ANALYTICS_ENABLED
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:

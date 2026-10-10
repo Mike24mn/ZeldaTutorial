@@ -1,3 +1,4 @@
+
 using UnityEngine;
 
 public class Arrow : MonoBehaviour
@@ -58,6 +59,10 @@ public class Arrow : MonoBehaviour
         Goriya goriya = other.GetComponent<Goriya>();
         if (goriya != null)
             goriya.TakeDamage(1, transform.position);
+
+        Gel gel = other.GetComponent<Gel>();
+        if (gel != null)
+            gel.TakeDamage(1, transform.position);
 
         Destroy(gameObject);
     }

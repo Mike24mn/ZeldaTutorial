@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using System.Collections;
 
@@ -55,6 +56,17 @@ public class Bomb : MonoBehaviour
             if (goriya != null)
             {
                 goriya.TakeDamage(
+                    damage,
+                    transform.position
+                );
+            }
+
+            // Damage Gel
+            Gel gel = hit.GetComponent<Gel>();
+
+            if (gel != null)
+            {
+                gel.TakeDamage(
                     damage,
                     transform.position
                 );

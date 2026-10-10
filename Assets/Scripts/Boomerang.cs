@@ -1,3 +1,4 @@
+
 using UnityEngine;
 
 public class Boomerang : MonoBehaviour
@@ -65,6 +66,10 @@ public class Boomerang : MonoBehaviour
         Goriya goriya = other.GetComponent<Goriya>();
         if (goriya != null)
             goriya.TakeDamage(damage, transform.position);
+
+        Gel gel = other.GetComponent<Gel>();
+        if (gel != null)
+            gel.TakeDamage(damage, transform.position);
 
         returning = true;
     }

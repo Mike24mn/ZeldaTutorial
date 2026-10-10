@@ -1,3 +1,4 @@
+
 using UnityEngine;
 
 public class Sword : MonoBehaviour
@@ -25,6 +26,14 @@ public class Sword : MonoBehaviour
         if (goriya != null)
         {
             goriya.TakeDamage(1, transform.root.position);
+            return;
+        }
+
+        Gel gel = other.GetComponent<Gel>();
+        if (gel != null)
+        {
+            gel.TakeDamage(1, transform.root.position);
+            return;
         }
     }
 }
