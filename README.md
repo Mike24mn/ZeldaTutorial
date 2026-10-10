@@ -21,6 +21,9 @@ Recreation of Dungeon #1 from the original 1986 *The Legend of Zelda* in Unity.
 - Doorway collision has been adjusted to allow Link to move between connected rooms.
 - Camera displays a complete Zelda room using the required 4:3 presentation.
 - Camera transitions between rooms as Link moves through dungeon doorways.
+- Solid water tiles and a reusable water prefab have been added.
+- Pushable blocks, staircase teleports, and the Bow Room have been implemented.
+- The Old-Man Room has been implemented with dialogue and a sprite.
 
 #### Resolution and Control Standards
 
@@ -187,20 +190,20 @@ Recreation of Dungeon #1 from the original 1986 *The Legend of Zelda* in Unity.
 - BladeTrap enemy
 - Wallmaster enemy
 - Aquamentus boss with three-projectile fireball attacks, health, and weapon damage support
+- Solid water tiles and reusable water prefab
+- Pushable blocks and staircase teleports
+- Bow Room
+- Old-Man Room with dialogue and sprite
 
 ### Still In Progress
 
-- Water tiles
-- Pushable blocks
-- 2D Bow Room
-- Old-Man Room
 - Authentic enemy and item placement / level progression
 - Additional player and enemy sound effects
 - Final Alpha testing and cleanup
 
 ## Current Build Status
 
-The project currently includes a playable recreation of the Zelda dungeon with grid-based Link movement, directional sprites, wall collision, room-to-room progression, health and damage, player and enemy knockback, heart pickups, rupee and key collection, inventory HUD elements, locked doors, sword combat, full-health sword beams, and multiple alternate weapons.
+The project currently includes a playable recreation of the Zelda dungeon with grid-based Link movement, directional sprites, wall collision, solid water tiles, room-to-room progression, health and damage, player and enemy knockback, heart pickups, rupee and key collection, inventory HUD elements, locked doors, sword combat, full-health sword beams, and multiple alternate weapons.
 
 The alternate-weapon system currently supports the Bow, Boomerang, and Bomb. Space cycles between available alternate weapons, the HUD updates to show the selected weapon, and Z activates the selected weapon. The Bow fires arrows using rupees, the Boomerang travels outward and returns to Link, and Bombs explode after a timed fuse and damage nearby enemies.
 
@@ -214,7 +217,7 @@ The game is configured to launch directly into the Dungeon scene using the requi
 
 A dedicated `LAB_Stalfos` scene is included for isolated enemy testing. The generated Zelda dungeon map is functioning correctly after updating the tile-generation code for the current Unity version.
 
-Development has progressed from the P1 Milestone into the P1 Alpha requirements. All currently planned Alpha enemy types are implemented. Remaining Alpha work focuses on environmental mechanics, authentic dungeon progression, additional audio, and final testing.
+Development has progressed from the P1 Milestone into the P1 Alpha requirements. All currently planned Alpha enemy types are implemented. The Bow Room, Old-Man Room, pushable blocks, staircase teleports, and solid water tiles have also been added. Remaining Alpha work focuses on authentic enemy and item placement, additional audio, integration testing, and cleanup.
 
 ### Keese
 - Implemented Keese bat enemy behavior.
@@ -270,3 +273,17 @@ Development has progressed from the P1 Milestone into the P1 Alpha requirements.
 - Aquamentus is destroyed when its health reaches zero.
 - Created reusable `Aquamentus` and `AquamentusFireball` prefabs and integrated the boss into the Dungeon scene.
 - Updated player weapon collision and explosion scripts to support Aquamentus damage.
+
+### Bow Room, Staircase Teleports, and Pushable Blocks
+- Implemented the Bow Room.
+- Added staircase teleport functionality.
+- Implemented pushable blocks.
+
+### Old-Man Room
+- Added the Old-Man Room with dialogue and a character sprite.
+
+### Water Tiles
+- Added solid water tiles and a reusable water prefab.
+
+### Integration Notes
+- The above environment features are recorded from the latest teammate commits; full in-game regression testing is still pending.
