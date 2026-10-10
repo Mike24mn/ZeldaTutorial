@@ -185,10 +185,10 @@ Recreation of Dungeon #1 from the original 1986 *The Legend of Zelda* in Unity.
 - Goriya enemy and returning enemy boomerang
 - Gel enemy
 - BladeTrap enemy
+- Wallmaster enemy
 
 ### Still In Progress
 
-- Wallmaster
 - Aquamentus
 - Water tiles
 - Pushable blocks
@@ -204,7 +204,7 @@ The project currently includes a playable recreation of the Zelda dungeon with g
 
 The alternate-weapon system currently supports the Bow, Boomerang, and Bomb. Space cycles between available alternate weapons, the HUD updates to show the selected weapon, and Z activates the selected weapon. The Bow fires arrows using rupees, the Boomerang travels outward and returns to Link, and Bombs explode after a timed fuse and damage nearby enemies.
 
-Stalfos, Keese, Goriya, Gel, and BladeTrap are implemented and integrated into the Dungeon scene. Player weapons can damage these enemies. Stalfos and Gel can randomly drop collectibles when defeated.
+Stalfos, Keese, Goriya, Gel, BladeTrap, and Wallmaster are implemented in the Dungeon scene. Standard enemies support weapon damage; BladeTrap charges at Link, while Wallmaster grabs Link and returns him to the dungeon entrance. Stalfos and Gel can randomly drop collectibles when defeated.
 
 Keys can be collected and tracked through the HUD, and locked doors consume keys when unlocked. Rupees are tracked through the HUD and are consumed when firing arrows. Collectible pickups provide audio feedback.
 
@@ -214,7 +214,7 @@ The game is configured to launch directly into the Dungeon scene using the requi
 
 A dedicated `LAB_Stalfos` scene is included for isolated enemy testing. The generated Zelda dungeon map is functioning correctly after updating the tile-generation code for the current Unity version.
 
-Development has progressed from the P1 Milestone into the P1 Alpha requirements. Current Alpha work is focused on the remaining dungeon enemies (Wallmaster and Aquamentus), environmental mechanics, authentic dungeon progression, and additional audio.
+Development has progressed from the P1 Milestone into the P1 Alpha requirements. Current Alpha work is focused on the remaining dungeon enemy (Aquamentus), environmental mechanics, authentic dungeon progression, and additional audio.
 
 ### Keese
 - Implemented Keese bat enemy behavior.
@@ -254,3 +254,9 @@ Development has progressed from the P1 Milestone into the P1 Alpha requirements.
 - Fixed the BladeTrap sprite background transparency.
 - Created a reusable `BladeTrap` prefab and integrated it into the main Dungeon scene.
 - Tested charging, return behavior, and contact damage in the Dungeon scene.
+
+### Wallmaster
+- Implemented Wallmaster tracking Link and grabbing him on contact.
+- Grabbing Link returns him to the dungeon entrance, with camera transitions tested.
+- Added respawn cooldown, transparent sprite, and reusable prefab.
+- Integrated and tested Wallmaster in the Dungeon scene.
