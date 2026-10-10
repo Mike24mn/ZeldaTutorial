@@ -35,5 +35,13 @@ public class Sword : MonoBehaviour
             gel.TakeDamage(1, transform.root.position);
             return;
         }
+
+        Aquamentus aquamentus = other.GetComponent<Aquamentus>();
+        if (aquamentus != null)
+        {
+            aquamentus.TakeDamage(1, transform.root.position);
+            return;
+        }
     }
 }
+

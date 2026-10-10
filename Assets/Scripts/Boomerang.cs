@@ -71,6 +71,10 @@ public class Boomerang : MonoBehaviour
         if (gel != null)
             gel.TakeDamage(damage, transform.position);
 
+        Aquamentus aquamentus = other.GetComponent<Aquamentus>();
+        if (aquamentus != null)
+            aquamentus.TakeDamage(damage, transform.position);
+
         returning = true;
     }
 }

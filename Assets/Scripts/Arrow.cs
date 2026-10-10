@@ -64,6 +64,11 @@ public class Arrow : MonoBehaviour
         if (gel != null)
             gel.TakeDamage(1, transform.position);
 
+        Aquamentus aquamentus = other.GetComponent<Aquamentus>();
+        if (aquamentus != null)
+            aquamentus.TakeDamage(1, transform.position);
+
         Destroy(gameObject);
     }
 }
+

@@ -66211,6 +66211,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 551772256072242875, guid: f9022967eee1b4b2588e90c095df44fd, type: 3}
   m_PrefabInstance: {fileID: 637787571}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &638082740 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8993719355837010872, guid: c46874085d75d5741a5ed5164db2cb50, type: 3}
+  m_PrefabInstance: {fileID: 3463907752633029061}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &638082745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638082740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 700f0fe6db516cf41bbdeda14d58ace2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Aquamentus
+  moveSpeed: 0.5
+  moveDistance: 0.6
+  fireInterval: 2.5
+  projectileSpeed: 3
+  fireballPrefab: {fileID: 2545739793120452194, guid: e63379a2c3691954daf04ced77a94135, type: 3}
 --- !u!4 &638212335 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7007698557765910282, guid: 966f2356a6c72417fa20ee345e5e8bd8, type: 3}
@@ -216032,6 +216054,66 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e2dec83efe82bd4fa130e083a911298, type: 3}
+--- !u!1001 &3463907752633029061
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6063498203437124549, guid: c46874085d75d5741a5ed5164db2cb50, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 43.194
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063498203437124549, guid: c46874085d75d5741a5ed5164db2cb50, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 16.815
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063498203437124549, guid: c46874085d75d5741a5ed5164db2cb50, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063498203437124549, guid: c46874085d75d5741a5ed5164db2cb50, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063498203437124549, guid: c46874085d75d5741a5ed5164db2cb50, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063498203437124549, guid: c46874085d75d5741a5ed5164db2cb50, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063498203437124549, guid: c46874085d75d5741a5ed5164db2cb50, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063498203437124549, guid: c46874085d75d5741a5ed5164db2cb50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063498203437124549, guid: c46874085d75d5741a5ed5164db2cb50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063498203437124549, guid: c46874085d75d5741a5ed5164db2cb50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8993719355837010872, guid: c46874085d75d5741a5ed5164db2cb50, type: 3}
+      propertyPath: m_Name
+      value: Aquamentus
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8993719355837010872, guid: c46874085d75d5741a5ed5164db2cb50, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 638082745}
+  m_SourcePrefab: {fileID: 100100000, guid: c46874085d75d5741a5ed5164db2cb50, type: 3}
 --- !u!1001 &3976391839513378052
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -216374,3 +216456,4 @@ SceneRoots:
   - {fileID: 5992493427125219864}
   - {fileID: 6546986008804281016}
   - {fileID: 1894710741}
+  - {fileID: 3463907752633029061}
