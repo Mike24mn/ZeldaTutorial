@@ -12,6 +12,8 @@ public class Bow : MonoBehaviour
     // 0 = Bow, 1 = Boomerang, 2 = Bomb
     private int selectedWeapon = 0;
 
+    public bool hasBow = false;
+
     void Start()
     {
         inventory = GetComponent<Inventory>();
@@ -20,7 +22,6 @@ public class Bow : MonoBehaviour
 
     void Update()
     {
-        // Cycle alternate weapons
         if (Input.GetKeyDown(KeyCode.Space))
         {
             selectedWeapon = (selectedWeapon + 1) % 3;
@@ -33,7 +34,6 @@ public class Bow : MonoBehaviour
                 Debug.Log("Selected: Bomb");
         }
 
-        // Use selected alternate weapon
         if (Input.GetKeyDown(KeyCode.Z))
         {
             if (selectedWeapon == 0)
@@ -45,8 +45,20 @@ public class Bow : MonoBehaviour
         }
     }
 
+    public void UnlockBow()
+    {
+        hasBow = true;
+        Debug.Log("Bow collected!");
+    }
+
     void ShootBow()
     {
+        if (!hasBow)
+        {
+            Debug.Log("Bow not collected yet!");
+            return;
+        }
+
         if (!inventory.SpendRupee())
         {
             Debug.Log("No rupees!");

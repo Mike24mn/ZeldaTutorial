@@ -3,6 +3,7 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     public Transform target;
+    public Transform bowRoom;
 
     public float roomWidth = 16f;
     public float roomHeight = 11f;
@@ -15,15 +16,28 @@ public class CameraFollow : MonoBehaviour
         if (target == null)
             return;
 
+        // Special camera position for the Bow Room
+        if (bowRoom != null &&
+            target.position.x >= bowRoom.position.x - 8f &&
+            target.position.x < bowRoom.position.x + 8f &&
+            target.position.y >= bowRoom.position.y - 5.5f &&
+            target.position.y < bowRoom.position.y + 5.5f)
+        {
+            transform.position = new Vector3(
+                bowRoom.position.x,
+                bowRoom.position.y,
+                transform.position.z
+            );
+            return;
+        }
+
+        // Normal dungeon camera snapping
         int roomX = Mathf.FloorToInt(target.position.x / roomWidth);
         int roomY = Mathf.FloorToInt(target.position.y / roomHeight);
 
-        float cameraX = roomX * roomWidth + cameraOffsetX;
-        float cameraY = roomY * roomHeight + cameraOffsetY;
-
         transform.position = new Vector3(
-            cameraX,
-            cameraY,
+            roomX * roomWidth + cameraOffsetX,
+            roomY * roomHeight + cameraOffsetY,
             transform.position.z
         );
     }
