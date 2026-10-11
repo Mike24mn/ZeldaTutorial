@@ -1,3 +1,4 @@
+
 using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
@@ -19,13 +20,13 @@ public class CameraFollow : MonoBehaviour
         // Special camera position for the Bow Room
         if (bowRoom != null &&
             target.position.x >= bowRoom.position.x - 8f &&
-            target.position.x < bowRoom.position.x + 8f &&
+            target.position.x < bowRoom.position.x + 16f &&
             target.position.y >= bowRoom.position.y - 5.5f &&
-            target.position.y < bowRoom.position.y + 5.5f)
+            target.position.y < bowRoom.position.y + 11f)
         {
             transform.position = new Vector3(
-                bowRoom.position.x,
-                bowRoom.position.y,
+                bowRoom.position.x + cameraOffsetX,
+                bowRoom.position.y + cameraOffsetY,
                 transform.position.z
             );
             return;
