@@ -1,37 +1,29 @@
-# Project 1 Gold — Design Document
+PROJECT 1 GOLD — DESIGN DOCUMENT
 
-## 1. What is your new mechanic?
+NEW MECHANIC: SPEED TILES
 
-Our new mechanic is **Speed Tiles**, which consists of two types of floor tiles: Fast Tiles and Slow Tiles.
+Our new mechanic introduces two types of floor tiles: Fast Tiles and Slow Tiles. Fast Tiles increase Link's movement speed, while Slow Tiles decrease it. These tiles change how players navigate the dungeon, avoid enemies, and decide whether to collect resources.
 
-Fast Tiles increase the player's movement speed, while Slow Tiles decrease it. This mechanic changes how players navigate rooms, avoid enemies, and collect resources.
+TEACHING THE MECHANIC
 
-## 2. How does your level teach the mechanic?
+Room 1 introduces the mechanic through a simple slow zone and fast zone. Players can experience both movement effects before using the fast zone to proceed to Room 2.
 
-Room 1 introduces both types of Speed Tiles in a relatively safe environment. Players experience the Slow Zone first, then use the Fast Zone to reach Room 2.
+EXPLORING THE MECHANIC
 
-This allows players to understand the effects of each tile before facing more difficult challenges.
+Room 2 introduces enemies and a fast pathway surrounded by slow zones. Rupees and hearts are placed inside the slow zones, creating a risk-reward decision: players can stay on the faster route or enter dangerous slow areas to collect resources.
 
-## 3. How does your level explore the mechanic in different ways?
+Room 3 builds on Room 2 with increased difficulty and Wallmasters acting as traps. Players must carefully manage their movement speed to avoid enemies and navigate the room.
 
-**Room 2 — Combat and Resource Management**
+Room 4 combines extensive fast and slow zones into a final challenge. Players must apply the movement strategies learned in the previous rooms.
 
-A fast pathway is surrounded by slow zones containing enemies. Rupees and hearts are placed in the slow zones, encouraging players to choose between faster movement and collecting valuable resources while exposed to danger.
+DESIGN GOAL
 
-**Room 3 — Increased Difficulty and Traps**
+The level gradually introduces the mechanic, increases difficulty, and encourages meaningful choices between speed, safety, and rewards.
 
-Room 3 expands on the previous challenge with greater difficulty and Wallmasters acting as traps. Players must use their understanding of movement speed to navigate dangerous areas and avoid enemies.
+LEVEL ACCESS
 
-**Room 4 — Final Challenge**
+Press 4 during gameplay to teleport directly to the custom Gold level.
 
-The final room combines extensive fast and slow zones, requiring players to apply everything they have learned about movement speed, navigation, and risk management.
+PORTFOLIO URL
 
-Throughout the level, players must balance speed, safety, and rewards.
-
-## 4. Portfolio URL
-
-Add portfolio website URL here
-
-## 5. Level Access
-
-Press **4** during gameplay to teleport directly to the custom Gold level.
+TBD
