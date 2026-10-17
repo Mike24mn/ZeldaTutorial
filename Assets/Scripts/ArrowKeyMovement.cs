@@ -1,8 +1,10 @@
+
 using UnityEngine;
 
 public class ArrowKeyMovement : MonoBehaviour
 {
     public float movementSpeed = 5.0f;
+    [HideInInspector] public float normalMovementSpeed;
 
     public Sprite downSprite1;
     public Sprite downSprite2;
@@ -26,6 +28,7 @@ public class ArrowKeyMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        normalMovementSpeed = movementSpeed;
     }
 
     void Update()
