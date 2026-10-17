@@ -18,18 +18,19 @@ public class CameraFollow : MonoBehaviour
     public Transform customRoom3;
     public Transform customRoom4;
 
+    // Position of CustomRoom1
+    public Vector2 customLevelOrigin = new Vector2(-54f, -6f);
+
     void LateUpdate()
     {
         if (target == null)
             return;
 
-        // Check the four custom rooms first
-        if (FollowCustomRoom(customRoom1)) return;
-        if (FollowCustomRoom(customRoom2)) return;
-        if (FollowCustomRoom(customRoom3)) return;
-        if (FollowCustomRoom(customRoom4)) return;
+        // Custom level: use its own grid
+        if (FollowCustomLevel())
+            return;
 
-        // Special camera position for the Bow Room
+        // Special Bow Room camera
         if (bowRoom != null &&
             target.position.x >= bowRoom.position.x - 8f &&
             target.position.x < bowRoom.position.x + 16f &&
@@ -44,7 +45,7 @@ public class CameraFollow : MonoBehaviour
             return;
         }
 
-        // Normal dungeon camera snapping
+        // Original dungeon camera
         int roomX = Mathf.FloorToInt(target.position.x / roomWidth);
         int roomY = Mathf.FloorToInt(target.position.y / roomHeight);
 
@@ -55,26 +56,36 @@ public class CameraFollow : MonoBehaviour
         );
     }
 
-    bool FollowCustomRoom(Transform room)
+    bool FollowCustomLevel()
     {
-        if (room == null)
-            return false;
+        // Check Link's position against the custom level grid
+        float relativeX = target.position.x - customLevelOrigin.x;
+        float relativeY = target.position.y - customLevelOrigin.y;
 
-        // Check if Link is inside this room
-        if (target.position.x >= room.position.x &&
-            target.position.x < room.position.x + roomWidth &&
-            target.position.y >= room.position.y &&
-            target.position.y < room.position.y + roomHeight)
+        int roomX = Mathf.FloorToInt(relativeX / roomWidth);
+        int roomY = Mathf.FloorToInt(relativeY / roomHeight);
+
+        // Only handle our 2x2 custom level
+        if (roomX < 0 || roomX > 1 ||
+            roomY < 0 || roomY > 1)
         {
-            transform.position = new Vector3(
-                room.position.x + cameraOffsetX,
-                room.position.y + cameraOffsetY,
-                transform.position.z
-            );
-
-            return true;
+            return false;
         }
 
-        return false;
+        float cameraX = customLevelOrigin.x
+                        + roomX * roomWidth
+                        + cameraOffsetX;
+
+        float cameraY = customLevelOrigin.y
+                        + roomY * roomHeight
+                        + cameraOffsetY;
+
+        transform.position = new Vector3(
+            cameraX,
+            cameraY,
+            transform.position.z
+        );
+
+        return true;
     }
 }
