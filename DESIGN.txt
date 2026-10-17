@@ -1,0 +1,37 @@
+# Project 1 Gold — Design Document
+
+## 1. What is your new mechanic?
+
+Our new mechanic is **Speed Tiles**, which consists of two types of floor tiles: Fast Tiles and Slow Tiles.
+
+Fast Tiles increase the player's movement speed, while Slow Tiles decrease it. This mechanic changes how players navigate rooms, avoid enemies, and collect resources.
+
+## 2. How does your level teach the mechanic?
+
+Room 1 introduces both types of Speed Tiles in a relatively safe environment. Players experience the Slow Zone first, then use the Fast Zone to reach Room 2.
+
+This allows players to understand the effects of each tile before facing more difficult challenges.
+
+## 3. How does your level explore the mechanic in different ways?
+
+**Room 2 — Combat and Resource Management**
+
+A fast pathway is surrounded by slow zones containing enemies. Rupees and hearts are placed in the slow zones, encouraging players to choose between faster movement and collecting valuable resources while exposed to danger.
+
+**Room 3 — Increased Difficulty and Traps**
+
+Room 3 expands on the previous challenge with greater difficulty and Wallmasters acting as traps. Players must use their understanding of movement speed to navigate dangerous areas and avoid enemies.
+
+**Room 4 — Final Challenge**
+
+The final room combines extensive fast and slow zones, requiring players to apply everything they have learned about movement speed, navigation, and risk management.
+
+Throughout the level, players must balance speed, safety, and rewards.
+
+## 4. Portfolio URL
+
+Add portfolio website URL here
+
+## 5. Level Access
+
+Press **4** during gameplay to teleport directly to the custom Gold level.
