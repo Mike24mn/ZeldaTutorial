@@ -30,4 +30,6 @@ Matt Zhang Portfolio: https://zhan9148-source.github.io/
 
 Matt Zhang WebGL Game: https://zhan9148-source.github.io/zelda/index.html
 
-Teammate Portfolio: ADD YOUR LINK HERE !
+Michael LaFond Portfolio: https://mike24mn.github.io/
+
+Michael LaFond WebGL Link (Zelda Game Specifically): https://mike24mn.github.io/zelda/
